@@ -174,6 +174,7 @@
 		1637D7071DD15E2A00306CED /* Roboto Condensed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto Condensed.ttf"; path = "../app/assets/fonts/Roboto Condensed.ttf"; sourceTree = "<group>"; };
 		3C5D34101DF9EAED00740867 /* purple-train-512x512@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "purple-train-512x512@2x.png"; sourceTree = "<group>"; };
 		3C5D34111DF9EAED00740867 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3CDAAF0E1E9811F100F143C1 /* PurpleTrain.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = PurpleTrain.entitlements; path = PurpleTrain/PurpleTrain.entitlements; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -279,6 +280,7 @@
 		13B07FAE1A68108700A75B9A /* PurpleTrain */ = {
 			isa = PBXGroup;
 			children = (
+				3CDAAF0E1E9811F100F143C1 /* PurpleTrain.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -391,6 +393,11 @@
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 8E7TQ638ZD;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -639,6 +646,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon.debug;
+				CODE_SIGN_ENTITLEMENTS = PurpleTrain/PurpleTrain.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 8E7TQ638ZD;
@@ -664,6 +672,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon.release;
+				CODE_SIGN_ENTITLEMENTS = PurpleTrain/PurpleTrain.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8E7TQ638ZD;
 				HEADER_SEARCH_PATHS = (
