@@ -693,7 +693,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.purpletrain.debug;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.purpletrain;
 				PRODUCT_NAME = PurpleTrain;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

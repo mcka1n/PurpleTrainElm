@@ -10,6 +10,7 @@ type Msg
     = DismissAlert Alert
     | PickStop Stop
     | ReceiveAlerts (Result Http.Error Alerts)
+    | ReceiveInstallationResponse (Result Http.Error ())
     | ReceiveIssueResponse (Result Http.Error ())
     | ReceiveSchedule Direction (Result Http.Error Schedule)
     | ReceiveSettings SettingsResult

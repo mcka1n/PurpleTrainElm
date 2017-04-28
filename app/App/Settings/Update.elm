@@ -18,6 +18,7 @@ receiveSettings model settingsResult =
             ( { model
                 | dismissedAlertIds = Settings.dismissedAlertIds settings
                 , selectedStop = Settings.stop settings
+                , deviceToken = Settings.deviceToken settings
               }
             , onReceiveSettings settings
             )

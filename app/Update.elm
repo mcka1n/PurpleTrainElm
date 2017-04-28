@@ -15,6 +15,9 @@ import App.Maybe exposing (maybeToCommand)
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
+        ReceiveInstallationResponse _ ->
+            ( model, Cmd.none )
+
         ReceiveIssueResponse _ ->
             ( model, Cmd.none )
 
