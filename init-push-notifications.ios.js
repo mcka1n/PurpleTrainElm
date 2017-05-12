@@ -6,7 +6,7 @@ const {
 } = require('react-native');
 
 const upsertInstallation = (deviceToken, homeStopId) => {
-  const endpoint = `http://192.168.2.118:4000/api/v2/installations/${deviceToken}`;
+  const endpoint = `https://purpletrainapp.com/api/v2/installations/${deviceToken}`;
   const params = {
     method: 'PUT',
     headers: {
