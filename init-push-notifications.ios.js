@@ -25,7 +25,7 @@ const upsertInstallation = (deviceToken, homeStopId) => {
 
 const _onRegistered = (deviceToken) => {
   AsyncStorage.getItem('stop').then((stop) => {
-    if (stop !== null) {
+    if (stop) {
       upsertInstallation(deviceToken, stop);
     }
   });
@@ -51,9 +51,9 @@ export default function() {
   // TODO - where to remove event listener?
   PushNotificationIOS.addEventListener('register', _onRegistered);
 
-  AsyncStorage.getItem(promptKey, (value) => {
-    if (value === null) {
-      AsyncStorage.setItem(promptKey, 'true').then(() => {
+  AsyncStorage.getItem(promptKey).then((value) => {
+    if (!value) {
+      AsyncStorage.setItem(promptKey, 'somevalue').then(() => {
         promptForCancellationsNotifications();
       });
     }

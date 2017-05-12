@@ -3,6 +3,7 @@ module App.Settings.Update exposing (..)
 import App.Settings as Settings
 import App.Maybe exposing (maybeToCommand)
 import FetchAlertsAndSchedules exposing (fetchAlertsAndSchedules)
+import UpsertInstallation exposing (upsertInstallation)
 import Message exposing (..)
 import Model exposing (Model)
 import Types exposing (..)
@@ -26,5 +27,14 @@ receiveSettings model settingsResult =
 
 onReceiveSettings : Settings -> Cmd Msg
 onReceiveSettings settings =
-    Settings.stop settings
-        |> maybeToCommand fetchAlertsAndSchedules
+    let
+        maybeDeviceToken =
+            Settings.deviceToken settings
+
+        maybeStop =
+            Settings.stop settings
+    in
+        Cmd.batch
+            [ maybeStop |> maybeToCommand fetchAlertsAndSchedules
+            , maybeStop |> maybeToCommand (upsertInstallation maybeDeviceToken)
+            ]

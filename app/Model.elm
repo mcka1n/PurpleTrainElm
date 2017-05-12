@@ -16,7 +16,7 @@ type alias Model =
     , alertsAreExpanded : Bool
     , dismissedAlertIds : List Int
     , stopPickerDataSource : Loadable (DataSource Stop)
-    , deviceToken : Maybe String
+    , deviceToken : Maybe DeviceToken
     }
 
 
