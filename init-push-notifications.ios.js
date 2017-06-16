@@ -36,7 +36,7 @@ const _onRegistered = (deviceToken) => {
 
 const promptForCancellationsNotifications = () => {
   Alert.alert(
-    'Let purple train send you notifications?',
+    'This is what it sounds like when trains cry',
     'Purple Train can send you notifications when your trains are cancelled!',
     [
       { text: 'Not Now' },
