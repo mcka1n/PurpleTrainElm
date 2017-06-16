@@ -36,8 +36,8 @@ const _onRegistered = (deviceToken) => {
 
 const promptForCancellationsNotifications = () => {
   Alert.alert(
-    'Let Purple Train send you notifications?',
-    "Purple Train can send you notifications during rush hour when your stop's trains are cancelled!",
+    'Let purple train send you notifications?',
+    'Purple Train can send you notifications when your trains are cancelled!',
     [
       { text: 'Not Now' },
       { text: 'Give Access', onPress: PushNotificationIOS.requestPermissions },
